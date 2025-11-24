@@ -4,6 +4,8 @@ import plotly.express as px
 import json
 import os
 from datetime import datetime
+import OCR
+import LLM
 
 # -------------------- PAGE SETUP --------------------
 st.set_page_config(page_title="SkillBot Career & Personality Profiler", layout="centered")
