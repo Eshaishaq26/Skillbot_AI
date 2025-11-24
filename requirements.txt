@@ -4,6 +4,7 @@ plotly
 numpy
 opencv-python-headless
 paddleocr
+paddlepaddle
 
 
 
