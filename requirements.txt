@@ -1,12 +1,10 @@
-
-
 streamlit==1.51.0
 pandas==2.3.3
 numpy==2.3.5
 plotly==6.5.0
 opencv-python-headless==4.11.0.86
 paddleocr==3.3.2
-paddlepaddle==2.6.0
+paddlepaddle-cpu==3.6.1
 
 
 
