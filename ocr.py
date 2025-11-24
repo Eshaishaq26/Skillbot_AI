@@ -1,6 +1,3 @@
-!pip install paddlepaddle -i https://pypi.tuna.tsinghua.edu.cn/simple
-!pip install paddleocr opencv-python pandas
-
 import cv2
 import numpy as np
 import pandas as pd
@@ -219,3 +216,4 @@ def extract_marks_from_marksheet(image_path, output_csv=None):
 # 5) Run on your marksheet
 # ------------------------------------------------------------
 extract_marks_from_marksheet("/content/IMG_20210617_120733.jpg", output_csv='marksheet_marks.csv')
+
