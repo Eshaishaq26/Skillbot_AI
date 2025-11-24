@@ -4,8 +4,8 @@ import plotly.express as px
 import json
 import os
 from datetime import datetime
-import OCR
-import LLM
+import ocr
+import llm 
 from ocr import extract_marks_from_marksheet
 
 # -------------------- PAGE SETUP --------------------
