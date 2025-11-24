@@ -5,7 +5,8 @@ import json
 import os
 from datetime import datetime
 import ocr
-import llm 
+
+from llm import recommend_field
 from ocr import extract_marks_from_marksheet
 
 # -------------------- PAGE SETUP --------------------
