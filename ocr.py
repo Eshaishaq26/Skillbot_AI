@@ -29,7 +29,9 @@ def preprocess_image(path):
 # ------------------------------------------------------------
 # 2) OCR detection using PaddleOCR (much more accurate)
 # ------------------------------------------------------------
-ocr = PaddleOCR(use_angle_cls=True, lang='en')
+#ocr = PaddleOCR(use_angle_cls=True, lang='en')
+ocr = PaddleOCR(use_angle_cls=True, lang='en', use_gpu=False)
+
 
 def extract_text(img):
     result = ocr.ocr(img)
@@ -216,4 +218,5 @@ def extract_marks_from_marksheet(image_path, output_csv=None):
 # 5) Run on your marksheet
 # ------------------------------------------------------------
 extract_marks_from_marksheet("/content/IMG_20210617_120733.jpg", output_csv='marksheet_marks.csv')
+
 
