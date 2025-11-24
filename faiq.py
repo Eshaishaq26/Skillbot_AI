@@ -6,6 +6,7 @@ import os
 from datetime import datetime
 import OCR
 import LLM
+from ocr import extract_marks_from_marksheet
 
 # -------------------- PAGE SETUP --------------------
 st.set_page_config(page_title="SkillBot Career & Personality Profiler", layout="centered")
@@ -201,6 +202,42 @@ elif choice == "Dashboard":
 
         st.divider()
         st.subheader("Insight Summary")
+
+
+
+# =====================================================
+# ocr
+        if selected == "Dashboard":
+    st.title("Dashboard")
+    st.subheader("Insight Summary")
+
+    st.subheader("📑 Upload Marksheet Image")
+
+    uploaded_file = st.file_uploader("Upload marksheet image", type=["jpg","png","jpeg"])
+
+    if uploaded_file:
+        temp_path = f"/content/{uploaded_file.name}"
+        with open(temp_path, "wb") as f:
+            f.write(uploaded_file.getbuffer())
+
+        st.success("✅ Image uploaded")
+
+        if st.button("🔍 Run OCR Extraction"):
+            df = extract_marks_from_marksheet(temp_path, output_csv="marksheet_marks.csv")
+
+            st.success("✅ OCR Completed")
+
+            st.write("📊 Extracted Marks")
+            st.dataframe(df)
+
+            st.success("💾 CSV Saved: marksheet_marks.csv")
+# =====================================================
+        
+
+
+
+
+        
         top_interest = riasec_scores.idxmax()
         top_trait = tci_scores.idxmax()
         st.write(f"Top Interest: **{top_interest}**, Top Trait: **{top_trait}**")
